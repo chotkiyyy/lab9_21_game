@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab9 - Гра 21</title>
+    <link rel="stylesheet" href="lab9.css">
+    <script src="lab9.js" defer></script>
+</head>
+<body>
+
+    <div class="app-wrapper">
+        <div class="setup-card" id="setup-screen">
+            <h1>Гра «21»</h1>
+            <p class="subtitle">Введіть ім'я, щоб розпочати матч з 3 раундів</p>
+            <div class="input-group">
+                <input type="text" id="username-input" placeholder="Ваше ім'я..." maxlength="15">
+                <button id="start-btn">Почати гру</button>
+            </div>
+            <p class="error-msg" id="error-msg"></p>
+        </div>
+
+        <div class="game-board hidden" id="game-screen">
+            <div class="status-bar" id="status-text">Раунд 0 / 3 — Натисніть «Витягнути карту», щоб почати!</div>
+
+            <div class="arena">
+                <div class="player-card" id="user-card">
+                    <div class="player-header">
+                        <span class="player-title" id="display-name">Гравець</span>
+                        <span class="badge" id="user-score">0</span>
+                    </div>
+                    <div class="card-slot" id="user-slot">
+                        <img id="user-img" src="https://img-cdn.hltv.org/eventlogo/PhVPy7kXO_J_nfTng7a87h.png?ixlib=java-2.1.0&w=200&s=7a1dd4079a079fb5c5133dea996cc5f0" alt="Карта гравця">
+                        <span class="card-info" id="user-card-info"></span>
+                    </div>
+                </div>
+
+                <div class="vs-divider">VS</div>
+
+                <div class="player-card" id="comp-card">
+                    <div class="player-header">
+                        <span class="player-title">Комп'ютер</span>
+                        <span class="badge" id="comp-score">0</span>
+                    </div>
+                    <div class="card-slot" id="comp-slot">
+                        <img id="comp-img" src="https://img-cdn.hltv.org/eventlogo/PhVPy7kXO_J_nfTng7a87h.png?ixlib=java-2.1.0&w=200&s=7a1dd4079a079fb5c5133dea996cc5f0" alt="Карта комп'ютера">
+                        <span class="card-info" id="comp-card-info"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-panel">
+                <button class="main-btn" id="roll-btn">Витягнути карту</button>
+                <button class="secondary-btn hidden" id="reset-btn">Зіграти ще раз</button>
+            </div>
+            <button class="change-btn" id="chng-btn">Змінити ім'я</button>
+        </div>
+    </div>
+    
+</body>
+</html>
